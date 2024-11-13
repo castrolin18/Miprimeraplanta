@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Primera Planta</title>
+    <link type="image/png" sizes="96x96" rel="icon" href="src/img/logo.ico">
+    <link rel="stylesheet" href="/src/css/style.css">
+</head>
+
+<body>
+    <header>
+        <div class="logo">
+            <a href=""> <img src="/src/img/logo.png" alt="Mi Primera Planta" class="logo-img"></a>
+            <h1 class="titulo" class="titulo" >Mi Primera Planta 🌿</h1>
+        </div>
+    </header>
+    <form id="registroFormulario"  class="formulario" method="post">
+        <h2 class="fomulario_titulo">Datos de Clientes</h2>
+        <div class="form_container">
+            <div class="form_group">
+                <label for="nombreUsuario" class="form_label">Nombre:</label>
+                <input type="text" id="nombreUsuario" class="form_input" required maxlength="20">
+            </div>
+            <div class="form_group">
+                <label for="presupuesto" class="form_label">Presupuesto:</label>
+                <input type="number" id="presupuesto" class="form_input" required>
+            </div>
+            <div class="form_group">
+                <label for="cantidadArticulos" class="form_label">Cantidad de Articulos:</label>
+                <input type="number" id="cantidadArticulos" class="form_input" required min="0" max="20">
+            </div>
+            <div class="form_group">
+                <label for="direccion" class="form_label">Direccion:</label>
+                <input type="text" id="direccion" class="form_input" maxlength="20" required>
+            </div>
+            <div class="form_group form_group_entrega">
+                <label class="form_label">Seleccione el Tipo de Entrega:</label>
+                <div class="radio-options">
+                  <label>
+                    <input type="radio" name="entrega" value="domicilio"> Domicilio
+                  </label>
+                  <label>
+                    <input type="radio" name="entrega" value="tienda"> Tienda Física
+                  </label>
+                </div>
+              </div>
+              
+              
+            
+            
+
+            <div class="button_group">
+                <button type="submit" onclick="validarRegistro(event)" class="form_button">Iniciar Compra</button>
+                <button type="reset"  onclick="limpiarFormulario(event)" id="limpiarcampos" class="form_button_borrar">Limpiar Campos</button>
+            </div>
+        </div>
+    </form>
+    <script src="src/js/logic.js"></script>
+</body>
+</html>

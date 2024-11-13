@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Primera Planta</title>
+    <link type="image/png" sizes="96x96" rel="icon" href="src/img/logo.ico">
+    <link rel="stylesheet" href="/src/css/style.css">
+</head>
+
+<body>
+    <header>
+        <div class="logo">
+            <a href=""><img src="/src/img/logo.png" alt="Mi Primera Planta" class="logo-img"></a>
+            <h1 class="titulo">Mi Primera Planta 🌿</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="/index.html">Cancelar Compra</a></li>
+                <li><a href="/views/carro.html">Completar Compra</a></li>
+                <li><a href="/views/carro.html">
+                    <span id="iconoCarrito">🛒</span>
+                    <span id="cantidadCarrito">0</span> 
+                </a></li>
+            </ul>
+        </nav>
+    </header>
+    <section class="filtros">
+    <!-- Filtros -->
+    <label for="filtroCategoria">Filtrar por Categoría:</label>
+    <select id="categoriaFilter">
+        <option value="">Filtrar por Categoría</option>
+        <option value="ornamentales">Ornamentales</option>
+        <option value="cactus">Cactus</option>
+        <option value="medicinales">Medicinales</option>
+        <option value="flores">Flores</option>
+        <option value="suculentas">Suculentas</option>
+        <option value="árboles">Árboles</option>
+    </select>
+
+    <label for="filtroLibre"> Nombre</label>
+    <input type="text" id="filtroLibre" placeholder="Buscar por nombre o precio" />
+
+    <!-- Botones de Filtrar y Limpiar -->
+    <button id="filtrarButton">Filtrar</button>
+    <button id="limpiarButton">Limpiar Filtro</button>
+</section>
+
+    <div id="contenedorPrincipal">
+        
+
+        <!-- Lista de productos -->
+        <div id="listaProductos" class="seleccionlistaProductos"></div>
+        
+        <!-- Detalle del producto -->
+        <div id="detalleProducto" class="formulario"></div>
+    </div>
+
+    <script type="module" src="/src/js/ListarProductos.js"></script>
+</body>
+
+</html>

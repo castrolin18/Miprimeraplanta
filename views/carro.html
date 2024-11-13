@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Primera Planta - Carrito</title>
+    <link type="image/png" sizes="96x96" rel="icon" href="src/img/logo.ico">
+    <link rel="stylesheet" href="/src/css/style.css">
+</head>
+
+<body>
+    <header>
+        <div class="logo">
+            <a href="/index.html"><img src="/src/img/logo.png" alt="Mi Primera Planta" class="logo-img"></a>
+            <h1 class="titulo">Mi Primera Planta 🌿</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="/index.html">Cancelar Compra</a></li>
+                <li><a href="/views/ListarProductos.html">Seguir Comprando</a></li>
+                <li><a href="/views/carro.html">
+                    <span id="iconoCarrito">🛒</span>
+                    <span id="cantidadCarrito">0</span>
+                </a></li>
+            </ul>
+        </nav>
+    </header>
+    
+
+    <!-- Formulario de pago -->
+    <section id="seccionPago" class="formulario">
+        <h3>Información de la tarjeta de crédito</h3>
+        <form id="formPago" class="form_group">
+            <div class="form_group">
+                <label for="numeroTarjeta" class="form_label">Número de tarjeta:</label>
+                <input type="text" id="numeroTarjeta" name="numeroTarjeta" class="form_input" 
+                       maxlength="16" placeholder="1234 5678 9012 3456" required>
+            </div>
+            <div class="form_group">
+                <label for="fechaExpiracion" class="form_label">Fecha de expiración (MM/AA):</label>
+                <input type="text" id="fechaExpiracion" name="fechaExpiracion" class="form_input" 
+                       maxlength="5" placeholder="MM/AA" required>
+            </div>
+            <div class="form_group">
+                <label for="codigoSeguridad" class="form_label">Código de seguridad:</label>
+                <div class="codigo-seguridad-container">
+                    <input type="password" id="codigoSeguridad" name="codigoSeguridad" 
+                           class="form_input" maxlength="3" placeholder="***" required>
+                    <button type="button" id="verCodigo" class="form_button">👁️</button>
+                </div>
+            </div>
+            <div class="form_group">
+                <label for="titular" class="form_label">Nombre del titular:</label>
+                <input type="text" id="titular" name="titular" class="form_input" 
+                       placeholder="Como aparece en la tarjeta" required>
+            </div>
+            <div class="form_group">
+                <label for="paisEmision" class="form_label">País de emisión:</label>
+                <select id="paisEmision" name="paisEmision" class="form_input" required>
+                    <option value="">Seleccione un país</option>
+                    <option value="CO">Colombia</option>
+                    <option value="MX">México</option>
+                    <option value="AR">Argentina</option>
+                    <option value="CL">Chile</option>
+                    <option value="PE">Perú</option>
+                    <option value="EC">Ecuador</option>
+                    <option value="BR">Brasil</option>
+                    <option value="UY">Uruguay</option>
+                    <option value="PY">Paraguay</option>
+                    <option value="BO">Bolivia</option>
+                </select>
+            </div>
+            <div class="form_group">
+                <label for="tipoTarjeta" class="form_label">Tipo de tarjeta:</label>
+                <select id="tipoTarjeta" name="tipoTarjeta" class="form_input" required>
+                    <option value="">Seleccione tipo de tarjeta</option>
+                    <option value="mastercard">Mastercard</option>
+                    <option value="visa">Visa</option>
+                    <option value="prepagada">Prepagada</option>
+                </select>
+            </div>
+
+            <div class="button_group">
+                <button type="reset" id="limpiarCampos" class="form_button_borrar">Limpiar Campos</button>
+                <button type="submit" id="confirmarCompra" class="form_button">Confirmar Compra</button>
+            </div>
+        </form>
+    <main>
+        <div id="resumenCompra" class="resumen-compra">
+            <p>Subtotal: $<span id="totalCompra">0</span></p>
+            <p>Envío: $15,000</p>
+            <p class="total-final">Total con Envío: $<span id="totalConEnvio">0</span></p>
+        </div>
+        <section id="carrito" class="formulario">
+            <h2 class="formulario_titulo">Carrito de Compras</h2>
+
+            <!-- Tabla del carrito -->
+            <table id="tablaCarrito" class="tabla">
+                <thead>
+                    <tr>
+                        <th>Imagen</th>
+                        <th>Producto</th>
+                        <th>Cantidad</th>
+                        <th>Precio</th>
+                        <th>Total</th>
+                        <th>Eliminar</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Los productos se agregarán aquí desde JavaScript -->
+                </tbody>
+            </table>
+
+            <!-- Resumen de la compra -->
+           
+            </section>
+        </section>
+    </main>
+
+    <!-- Mensaje de estado de la compra -->
+    <div id="mensajeCompra" class="mensaje-compra"></div>
+
+    <script src="/src/js/Carrito.js" type="module"></script>
+</body>
+</html>
